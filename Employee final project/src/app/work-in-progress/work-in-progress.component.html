@@ -1,0 +1,94 @@
+
+
+<form name="myForm" #frm="ngForm" (ngSubmit)="onSubmitData(frm)" >
+    <div class="form-group">
+        <input type="hidden" name="id" class="form control" #id="ngModel" ngModel 
+        [(ngModel)]="idd">
+    </div>
+        <div class="form-group">
+            <label for="First Name">First Name:</label>
+            <input type="text" name="fname" class="form-control" #fname="ngModel" ngModel
+            [(ngModel)]="fn">
+      
+        </div>
+    
+        <div class="form-group">
+            <label for="Last Name">Last Name:</label>
+            <input type="text" name="lname" class="form-control" #fname="ngModel" ngModel
+            [(ngModel)]="ln">
+      
+        </div>
+    
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="text" name="eml" class="form-control" #fname="ngModel" ngModel
+            [(ngModel)]="eml">
+      
+        </div>
+    
+        <div class="form-group">
+            <label for="Cource">Cource:</label>
+            <select name="Cource" id="" class="form-control" #cource="ngModel" ngModel
+            [ngModel]="cor">
+            <option *ngFor="let cource of cources">{{cource}}</option>
+            </select>
+            
+        </div>
+    
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" class="radio" value="Male"#Gender="ngModel" ngModel [(ngModel)]="gen">
+            <label for="Male">Male</label>
+            <input type="radio" name="gender" class="radio"value="Female"#Gender="ngModel" ngModel [(ngModel)]="gen">
+            <label for="female">Female</label>
+        </div>
+    
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="Password" name="Pass" class="form-control"#Pass="ngModel" ngModel [(ngModel)]="ps">
+        </div>
+    
+        <div class="form-group">
+            <label for="CPassword"> Confirm Password:</label>
+            <input type="Password" name="CPass" class="form-control"#Cpass="ngModel" ngModel [(ngModel)]="cps">
+        </div><br> <br>
+    
+        <div class="form-group">
+            <button type="Submit" class="btn btn-info">Submit</button>
+            
+    
+            <button type="reset" class="btn btn-info">Reset</button>
+            
+        </div> 
+    </form>
+    
+    <!--show the data-->
+    <table class="table table-primary" *ngIf="showflag">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Cource</th>
+            <th>Gender</th>
+            <th>Password</th>
+            <th>Confirm Password</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let data of allData">
+            <td>{{data.fname}}</td>
+            <td>{{data.lname}}</td>
+            <td>{{data.eml}}</td>
+            <td>{{data.Cource}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.Pass}}</td>
+            <td>{{data.CPass}}</td>
+           <td>
+            <button class="btn btn-danger" (click)="onDeleteData (data)">Delete</button>
+           </td>
+           <td>
+            <button class="btn btn-warning" (click)="onUpdateData (data)">Update</button>
+           </td>  
+        
+        </tr>
+    </table>

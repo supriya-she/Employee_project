@@ -1,0 +1,45 @@
+<div class="seller-auth">
+    <div class="sign-in">
+        <form #frm="ngForm" (ngSubmit)="signup(frm)" class="common-form">
+            <h1>Login form</h1>
+            <div style="color: gray;">Login to access your account</div>
+            <input type="hidden" #id="ngModel" ngModel>
+            <input class="form-input" type="text" ngModel name="fname" placeholder="Enter Name"><br>
+            
+            <input class="form-input" type="text" ngModel name="lname" placeholder="Enter Last Name"><br>
+          
+            <input class="form-input" type="text" ngModel name="address" placeholder="Enter Address"><br>
+
+            <input class="form-input" type="password" name="password" ngModel placeholder="Enter Password"><br>
+            <input class="form-input" type="text" name="email" ngModel placeholder="Enter Email"><br>
+            <button class="form-button" class="btn btn-info" >sign-in</button>
+            
+            <h5 style="color: blue;">Forgot password?</h5><br>
+            <div style="color: black;" >Don't have an account? <h4 style="color: blue;">sign-up!</h4></div><br>
+        <!---->
+        </form>
+    </div>
+</div>
+<table class="table table-responsive">
+    <tr *ngIf="showflag">
+        <th>first name</th>
+        <th>last name</th>
+        <th>email</th>
+        <th>address</th>
+        <th>password</th>
+        <th>Action</th>
+        
+    </tr>
+    <tr *ngFor="let dt of alldata">
+        
+        <td>{{dt.fname|uppercase}}</td>
+        <td>{{dt.lname|uppercase}}</td>
+        <td>{{dt.email}}</td>
+        <td>{{dt.address|lowercase}}</td>
+        <td>{{dt.password}}</td>
+        <td>
+      <button class="btn btn-danger" (click)="ondelete(frm)">Delete</button>
+        </td>
+
+    </tr>
+</table>

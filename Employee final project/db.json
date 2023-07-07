@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+
+  "Employee": [
+    {
+      "id":1,
+    "Name":"supriya",
+    "Salary":15000,
+    "Email":"supriyashelke777@gmail.com",
+    "Age":23
+
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

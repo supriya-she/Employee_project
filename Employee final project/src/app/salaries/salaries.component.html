@@ -1,0 +1,57 @@
+<div class="container mt-2">
+
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Add Employee</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Employee List </button><br><br>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Add Employee</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+        <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+            <div class="row mt-2 d-flex">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Name</label>
+              <input type="text" class="form-control" name="Name" formControlName="Name" id="formGroupExampleInput" placeholder="Enter Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput2">Salary</label>
+              <input type="number" class="form-control" name="Salary" formControlName="Salary" id="formGroupExampleInput2" placeholder="enter Salary">
+            </div>
+        </div>
+        <div class="row mt-2 d-flex">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Email</label>
+              <input type="text" class="form-control" name="Email" formControlName="Email" id="formGroupExampleInput" placeholder="Enter Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput2">Age</label>
+              <input type="number" class="form-control"name="Age" formControlName="Age" id="formGroupExampleInput2" placeholder="enter age">
+            </div>
+        </div>
+        <div class="row mt-2 d-flex btns">
+            
+             <button type="submit" class="btn ml-1 mr-1 btn-primary">Add</button>
+            
+            
+                <button type="reset" class="btn ml-1 mr-1 btn-secondary">reset</button>
+               
+        </div>
+          </form>
+
+
+
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Employee List</div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  </div>
+</div>
+<table>
+ 
+  <tr>
+    
+  </tr>
+</table>
